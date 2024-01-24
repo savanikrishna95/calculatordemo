@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "lodash": "^4.17.21",
     "react": "^18.1.0",
+    "react-cache-buster": "^0.1.8",
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
@@ -19,9 +20,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "generate-meta-tag": "node ./node_modules/react-cache-buster/dist/generate-meta-tag.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "build": "react-scripts build",
+    "build": "npm generate-meta-tag && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
